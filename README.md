@@ -1,3 +1,10 @@
+# SVNTextEntryViewController
+A modal ViewController with a TextView designed for SVNAppBuilder.
+
+# To use this framework
+To create an instance of this class call init(theme: model: delegate:) or init(nibName: bundleName: theme: model: delegate:)
+Pass in a custom SVNTheme and SVNTextEntryViewModel instance or nil for default styling
+
 ## To install this framework
 
 Add Carthage files to your .gitignore
