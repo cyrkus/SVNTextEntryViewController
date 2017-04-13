@@ -27,9 +27,10 @@ open class SVNTextEntryViewController: SVNModalViewController {
             x: 15,
             y: self.dismissButton.frame.origin.y + self.dismissButton.frame.size.height + self.yPadding,
             width: self.view.frame.width - 15 * 2,
-            height: 45))
+            height: 65))
         label.textColor = self.theme.stanardButtonTintColor
         label.textAlignment = .center
+        label.numberOfLines = 0
         label.font = self.theme.largeHeading
         label.text = self.model.headerTitle
         return label
