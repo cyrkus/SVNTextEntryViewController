@@ -12,13 +12,7 @@ import SVNMaterialButton
 import SVNModalViewController
 import SVNTheme
 
-public protocol SVNTextEntryViewControllerDelegate: class {
-    func SVNTextEntryVC(didSubmit text: String)
-}
-
 open class SVNTextEntryViewController: SVNModalViewController {
-    
-    public weak var delegate:  SVNTextEntryViewControllerDelegate!
     
     public var yPadding: CGFloat = 35.0
     
@@ -81,18 +75,16 @@ open class SVNTextEntryViewController: SVNModalViewController {
     
     
     //MARK: Init
-    public init(theme:SVNTheme?, model: SVNTextEntryViewModel?, delegate: SVNTextEntryViewControllerDelegate) {
+    public init(theme:SVNTheme?, model: SVNTextEntryViewModel?) {
         super.init(nibName: nil, bundle: nil)
         self.theme = theme == nil ? SVNTheme_DefaultDark() : theme!
         self.model = model == nil ? SVNTextEntryVM() : model!
-        self.delegate = delegate
     }
     
-    public init(theme: SVNTheme?, model: SVNTextEntryViewModel?, nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?, delegate: SVNTextEntryViewControllerDelegate) {
+    public init(theme: SVNTheme?, model: SVNTextEntryViewModel?, nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         self.theme = theme == nil ? SVNTheme_DefaultDark() : theme!
         self.model = model == nil ? SVNTextEntryVM() : model!
-        self.delegate = delegate
     }
     
     required public init?(coder aDecoder: NSCoder) {
@@ -151,8 +143,10 @@ open class SVNTextEntryViewController: SVNModalViewController {
         self.view.endEditing(true)
     }
     
+    public var textEntryDidSubmit: ((String) -> Void)!
+    
     public func shouldSubmit(){
         guard textEditor.text != nil && textEditor.text != "" else { return }
-        self.delegate.SVNTextEntryVC(didSubmit: self.textEditor.text!)
+        textEntryDidSubmit(textEditor.text!)
     }
 }
