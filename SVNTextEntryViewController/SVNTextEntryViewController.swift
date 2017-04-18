@@ -131,7 +131,6 @@ open class SVNTextEntryViewController: SVNModalViewController {
      be careful when editing this as layers and subviews are dependent upon eachother
      */
     private func layoutView(){
-        self.addModalSubviews()
         self.view.addSubview(self.acceptButton)
         self.view.addSubview(self.header)
         self.view.addSubview(self.textEditor)
