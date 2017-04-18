@@ -21,7 +21,7 @@ open class SVNTextEntryViewController: SVNModalViewController {
             x: 15,
             y: self.dismissButton.frame.origin.y + self.dismissButton.frame.size.height + self.yPadding,
             width: self.view.frame.width - 15 * 2,
-            height: 55))
+            height: 85))
         label.textColor = self.theme.stanardButtonTintColor
         label.textAlignment = .center
         label.numberOfLines = 0
@@ -37,7 +37,7 @@ open class SVNTextEntryViewController: SVNModalViewController {
         divider.lineWidth = 1.0
         let line = UIBezierPath()
         line.lineWidth = 1.0
-        let y = self.header.frame.size.height + self.header.frame.origin.y + self.yPadding
+        let y = self.header.frame.size.height + self.header.frame.origin.y + 15
         line.move(to: CGPoint(x: 45, y: y))
         line.addLine(to: CGPoint(x: self.view.bounds.width - 45, y: y))
         divider.path = line.cgPath
