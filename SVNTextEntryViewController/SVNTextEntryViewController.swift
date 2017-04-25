@@ -96,6 +96,7 @@ open class SVNTextEntryViewController: SVNModalViewController {
     override open func viewDidLoad() {
         super.viewDidLoad()
         self.stylizeView()
+        self.addModalSubviews()
     }
     
      override open func viewDidAppear(_ animated: Bool) {
