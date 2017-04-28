@@ -1,5 +1,12 @@
 # SVNTextEntryViewController
-A modal ViewController with a TextView designed for SVNAppBuilder.
+A ViewController with a UITextView and a SVNMaterialButton. A subclass of SVNModalViewController.
+<p align="center">
+  <img src="/images/Review.png" alt="SVNTextEntryViewController"/>
+</p>
+
+Submodules include:
+[SVNMaterialButton](https://github.com/sevenapps/SVNMaterialButton)
+[SVNModalViewController](https://github.com/sevenapps/SVNModalViewController)
 
 # To use this framework
 To create an instance of this class call init(theme: model: delegate:) or init(nibName: bundleName: theme: model: delegate:)
