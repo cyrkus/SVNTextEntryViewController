@@ -13,7 +13,7 @@ public protocol SVNTextEntryViewModel {
     var confirmButtonTitle: String { get set }
 }
 
-internal struct SVNTextEntryVM: SVNTextEntryViewModel {
+internal struct SVNTextEntryViewModel_Default: SVNTextEntryViewModel {
     var seperatorColor: UIColor = UIColor(red: 151/255.0, green: 151/255.0, blue: 151/255.0, alpha: 1.0)
     var headerTitle: String = "Say something about our products!"
     var confirmButtonTitle: String = "Confirm"

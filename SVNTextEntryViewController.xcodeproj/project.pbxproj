@@ -364,6 +364,7 @@
 				A10AE8961EA0231E00670C9A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
